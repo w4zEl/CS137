@@ -1,5 +1,4 @@
 #include "functions.h"
-#include "functions.h"
 #include <assert.h>
 int main(void) {
     assert(isSophieGermainPrime(11));
