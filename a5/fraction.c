@@ -3,8 +3,7 @@ int gcd(int a, int b) {
     return b ? gcd(b, a % b) : a < 0 ? -a : a;
 }
 struct fraction fractionCreate(int numerator, int denominator) {
-    if (numerator < 0) numerator *= -1, denominator *= -1;
-    int div = gcd(numerator, denominator);
+    int div = gcd(numerator, denominator) * (numerator < 0 || !numerator && denominator < 0 ? -1 : 1);
     return (struct fraction){numerator / div, denominator / div};
 }
 int get_numerator(struct fraction a) {
