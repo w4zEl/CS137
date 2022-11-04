@@ -1,1 +1,1 @@
-runmain.ps1
+../runmain.ps1
