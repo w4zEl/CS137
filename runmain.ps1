@@ -11,4 +11,4 @@ Rename-Item -Path "$($out.FullName)" -NewName "$($out.FullName + '.exe')"
 $out = $out.FullName + '.exe'
 gcc -Wall -pedantic -std=c11 "$name.c" "${name}_main.c" -o "$out"
 if ($?) { & "$out" }
-Remove-Item "$out"
+Remove-Item "$out" 2>$null
