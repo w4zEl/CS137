@@ -30,12 +30,12 @@ static struct linteger* normalize(int *d, int len) {
 }
 struct linteger* vlintegerAdd(struct linteger* t1, struct linteger* t2) {
     int j = t1->length, k = t2->length, len = (j > k ? j : k) + 1, i = len, *s = malloc(len * sizeof *s), carry = 0;
-	while (i--) {
-		int curr = (j ? t1->arr[--j] : 0) + (k ? t2->arr[--k] : 0) + carry;
-		s[i] = curr % 10;
-		carry = curr / 10;
-	}
-	return normalize(s, len);
+    while (i--) {
+        int curr = (j ? t1->arr[--j] : 0) + (k ? t2->arr[--k] : 0) + carry;
+        s[i] = curr % 10;
+        carry = curr / 10;
+    }
+    return normalize(s, len);
 }
 struct linteger* vlintegerMult(struct linteger* t1, struct linteger* t2) {
     int len = t1->length + t2->length, *p = calloc(len, sizeof *p);
